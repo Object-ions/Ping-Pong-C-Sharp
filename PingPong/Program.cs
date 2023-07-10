@@ -41,13 +41,13 @@ namespace PingPong.Models
                 Console.WriteLine("Would You Like To Play Again? (Y/N)");
                 string userAnswerRetry2 = Console.ReadLine();
                 if (userAnswerRetry2 == "y" || userAnswerRetry2 == "Y" || userAnswerRetry2 == "yes" || userAnswerRetry2 == "YES" || userAnswerRetry2 == "Yes")
-            {
-                Main();
-            }
-            else
-            {
-                Console.WriteLine("Good Bye!");
-            }
+                {
+                    Main();
+                }
+                else
+                {
+                    Console.WriteLine("Good Bye!");
+                }
             }
         }
     }
