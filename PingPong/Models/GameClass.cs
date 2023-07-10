@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System;
+
 
 namespace PingPong.Models
 {
@@ -8,13 +8,28 @@ namespace PingPong.Models
         public static Dictionary<int, object> _gameResult = new Dictionary<int, object> {};
         // Business Logic goes here.
 
-        public static Dictionary<int, object> CountUp(int userInput)
+        public static Dictionary<int, object> CountUp(int userInputNumber)
         {
             _gameResult.Clear();
 
-            for (int i = 1; i <= userInput; i++)
+            for (int i = 1; i <= userInputNumber; i++)
             {
-                _gameResult.Add(i, i);
+                if (i%3 == 0 && i%5 ==0)
+                {
+                    _gameResult.Add(i, "Ping Pong");
+                }
+                else if (i%5 == 0)
+                {
+                    _gameResult.Add(i, "Pong");
+                }
+                else if (i%3 == 0)
+                {
+                    _gameResult.Add(i, "Ping");
+                }
+                else
+                {
+                    _gameResult.Add(i, i);
+                }
             }
 
             return _gameResult;
