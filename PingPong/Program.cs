@@ -26,13 +26,28 @@ namespace PingPong.Models
             Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*");
             Console.WriteLine("Would You Like To Play Again? (Y/N)");
             string userAnswerRetry = Console.ReadLine();
-            if (userAnswerRetry == "y" || userAnswerRetry == "Y" || userAnswerRetry == "yes" || userAnswerRetry == "YES")
+            if (userAnswerRetry == "y" || userAnswerRetry == "Y" || userAnswerRetry == "yes" || userAnswerRetry == "YES" || userAnswerRetry == "Yes")
+            {
+                Main();
+            }
+            else if (userAnswerRetry == "n" || userAnswerRetry == "N" || userAnswerRetry == "no" || userAnswerRetry == "NO" || userAnswerRetry == "No")
+            {
+                Console.WriteLine("Good Bye!");
+            }
+            else
+            {
+                Console.WriteLine("That's Not a Valid Answer");
+                Console.WriteLine("Let's Try Again...");
+                Console.WriteLine("Would You Like To Play Again? (Y/N)");
+                string userAnswerRetry2 = Console.ReadLine();
+                if (userAnswerRetry2 == "y" || userAnswerRetry2 == "Y" || userAnswerRetry2 == "yes" || userAnswerRetry2 == "YES" || userAnswerRetry2 == "Yes")
             {
                 Main();
             }
             else
             {
                 Console.WriteLine("Good Bye!");
+            }
             }
         }
     }
