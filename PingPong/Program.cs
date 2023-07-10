@@ -1,4 +1,4 @@
-namespace ProjectName
+namespace PingPong.Models
 {
     class Program
     {
