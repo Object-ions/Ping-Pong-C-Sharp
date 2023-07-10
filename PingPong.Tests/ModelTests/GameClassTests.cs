@@ -1,18 +1,27 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName.Models;
+using PingPong.Models;
+using System.Collections.Generic;
 
-namespace ProjectName.Tests
+namespace PingPong.Models.Tests
 {
     [TestClass]
-    public class ClassNameTests
+    public class GameClassTests
     {
-        // Test methods go here
         [TestMethod]
-        public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+        public void CountUp_FillsGameResult_UpToInputNumber()
         {
-        // any necessary logic to prep for test; instantiating new classes, etc.
-        // we can also use the arrange, act, assert organization in any test. 
-        Assert.AreEqual(ExpectedResult, CodeToTest);
+            // Arrange
+            int input = 10;
+
+            // Act
+            var result = GameClass.CountUp(input);
+
+            // Assert
+            for (int i = 1; i <= input; i++)
+            {
+                Assert.IsTrue(result.ContainsKey(i));
+                Assert.AreEqual(i, result[i]);
+            }
         }
     }
 }
